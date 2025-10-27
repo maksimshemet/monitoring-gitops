@@ -9,3 +9,4 @@ resources:
   - ./prometheus/prometheus-deployment.yaml
   - ./prometheus/prometheus-service.yaml
   - ./prometheus/prometheus-ingress.yaml
+  - ./prometheus/prometheus-sa.yaml
