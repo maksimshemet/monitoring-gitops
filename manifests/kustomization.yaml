@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: monitoring
 
 resources:
+  - ./namespace.yaml  
   - ./prometheus/prometheus-config.yaml
   - ./prometheus/prometheus-deployment.yaml
   - ./prometheus/prometheus-service.yaml
