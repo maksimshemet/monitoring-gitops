@@ -10,3 +10,6 @@ resources:
   - ./prometheus/prometheus-service.yaml
   - ./prometheus/prometheus-ingress.yaml
   - ./prometheus/prometheus-sa.yaml
+  - ./grafana/grafana-deployment.yaml
+  - ./grafana/grafana-service.yaml
+  - ./grafana/grafana-ingress.yaml
