@@ -13,7 +13,7 @@ spec:
     - host: monitoring.smv.pp.ua
       http:
         paths:
-          - path: /
+          - path: /prometheus
             pathType: Prefix
             backend:
               service:
