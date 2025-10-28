@@ -16,9 +16,13 @@ data:
         static_configs:
           - targets: ['node-exporter-prometheus-node-exporter.monitoring.svc.cluster.local:9100']
         relabel_configs:
-          # Use node name for instance label
-          - source_labels: [__meta_kubernetes_node_name]
-            target_label: instance
+          # Keep only node-exporter endpoints
+          - source_labels: [__meta_kubernetes_service_label_app_kubernetes_io_name]
+            regex: node-exporter
+            action: keep
+          # Copy node name to a label
+          - source_labels: [__meta_kubernetes_pod_node_name]
+            target_label: node
             
       - job_name: 'kubernetes-pods'
         kubernetes_sd_configs:
